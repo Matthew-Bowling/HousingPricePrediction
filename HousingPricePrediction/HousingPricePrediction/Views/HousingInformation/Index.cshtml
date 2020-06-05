@@ -1,0 +1,51 @@
+﻿@model HousingPricePrediction.Models.HousingDataModel;
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Housing Price Prediction</h1>
+
+@using (Html.BeginForm("MakePrediction", "HousingInformation", FormMethod.Post))
+{
+    <div>
+        <p>Overall Quality</p>
+        @Html.TextBoxFor(model => model.OverallQuality)
+        @Html.ValidationMessageFor(model => model.OverallQuality)
+    </div>
+    <div>
+        <p>Ground Living Area</p>
+        @Html.TextBoxFor(model => model.GroundLivingArea)
+    </div>
+    <div>
+        <p>Number of Cars the Garage Fits</p>
+        @Html.TextBoxFor(model => model.GarageCars)
+    </div>
+    <div>
+        <p>Garage Area Size</p>
+        @Html.TextBoxFor(model => model.GarageArea)
+    </div>
+    <div>
+        <p>Total Basement SquareFootage</p>
+        @Html.TextBoxFor(model => model.TotalBasementSquareFoot)
+    </div>
+    <div>
+        <p>First Floor SquareFootage</p>
+        @Html.TextBoxFor(model => model.FirstFloorSquareFoot)
+    </div>
+    <div>
+        <p>Number of FullBaths</p>
+        @Html.TextBoxFor(model => model.FullBath)
+    </div>
+    <div>
+        <p>Total Rooms Above Ground</p>
+        @Html.TextBoxFor(model => model.TotalRoomsAboveGround)
+    </div>
+    <div>
+        <p>Year Built</p>
+        @Html.TextBoxFor(model => model.YearBuilt)
+    </div>
+
+    <div>
+        <button type="submit">Make Sale Price Prediction</button>
+    </div>
+}
