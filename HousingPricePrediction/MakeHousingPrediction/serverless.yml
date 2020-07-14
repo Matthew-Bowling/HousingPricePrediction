@@ -23,6 +23,11 @@ service: makehousingprediction
 provider:
   name: aws
   runtime: dotnetcore3.1
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - sagemaker:InvokeEndpoint
+      Resource: "arn:aws:sagemaker:us-east-1:563531715871:endpoint/*"
 
 # you can overwrite defaults here
 #  stage: dev
@@ -52,8 +57,8 @@ package:
   individually: true
 
 functions:
-  hello:
-    handler: CsharpHandlers::AwsDotnetCsharp.MakeHousingPrediction::MakePrediction
+  prediction:
+    handler: MakeHousingPrediction::MakeHousingPrediction.MakePrediction::Prediction
 
     # you can add packaging information here
     package:

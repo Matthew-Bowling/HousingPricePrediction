@@ -1,0 +1,15 @@
+﻿@model HousingPricePrediction.Models.PredictionResult
+@{
+    ViewData["Title"] = "PredictionResult";
+}
+
+<h1>PredictionResult</h1>
+
+<div>
+    <p>The House you're looking at will cost @Html.DisplayFor(m => m.ResultString)</p>
+</div>
+
+<div>
+    <a href="@Url.Action("Index","HousingInformation")" <p>please click here to make another</p> </a>
+</div>
+
