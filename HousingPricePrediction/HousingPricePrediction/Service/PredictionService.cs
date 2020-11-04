@@ -64,7 +64,7 @@ namespace HousingPricePrediction.Service
 
         private static BasicAWSCredentials GetAwsCredentials()
         {
-            return new BasicAWSCredentials("AKIAYGNI3SUPV7X4ONAN", "zG/w39gB6TjeoBX+Pbc3fxoyCyvo3/rwUy02iVC1");
+            return new BasicAWSCredentials();
         }
     }
 }
